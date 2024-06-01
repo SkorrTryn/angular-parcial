@@ -7,15 +7,15 @@ import { InmuebleService } from '../Servicio/inmueble.service';
   styleUrls: ['./referencia-inmueble.component.css']
 })
 export class ReferenciaInmuebleComponent {
-  inmueble!: Inmueble;
+  inmueble: Inmueble | null = null;;
   referencia!: string;
 
   constructor(private inmuebleService: InmuebleService) { }
 
   getInmueble(): void {
-    this.inmuebleService.getInmueble(this.referencia).subscribe(response => {
-      this.inmueble = response
-      console.log(this.inmueble); 
-    })
+    this.inmueble=null;
+    this.inmuebleService.getInmueble(this.referencia).subscribe((data: any) => {
+      this.inmueble = data.inmueble;
+    });
   }
 }

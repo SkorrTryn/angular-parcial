@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Crear Visita</h2>
+    <form (ngSubmit)="create()" #visitaForm="ngForm">
+      <div class="form-group">
+        <label for="inmueble">Referencia del inmueble</label>
+        <input type="text" id="inmueble" class="form-control" required [(ngModel)]="inmueble" name="inmueble">
+      </div>
+
+      <div class="form-group">
+        <label for="clienteNombre">Nombre del Cliente</label>
+        <input type="text" id="clienteNombre" class="form-control" required [(ngModel)]="visita.clienteNombre" name="clienteNombre">
+      </div>
+      <div class="form-group">
+        <label for="clienteTelefono">Teléfono del Cliente</label>
+        <input type="text" id="clienteTelefono" class="form-control" required [(ngModel)]="visita.clienteTelefono" name="clienteTelefono">
+      </div>
+      <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" class="form-control" required [(ngModel)]="visita.fecha" name="fecha">
+      </div>
+      <div class="form-group">
+        <label for="comentario">Comentario</label>
+        <textarea id="comentario" class="form-control" required [(ngModel)]="visita.comentario" name="comentario"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!visitaForm.form.valid">Crear Visita</button>
+    </form>
+  </div>
+  
