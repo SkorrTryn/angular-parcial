@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Buscar Inmueble por Referencia</h2>
+    <div class="input-group mb-3">
+      <input type="text" id="searchInput" class="form-control" placeholder="Introduce la referencia del inmueble" [(ngModel)]="referencia">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" (click)="getInmueble()">Buscar</button>
+      </div>
+    </div>
+    <div id="inmuebleResult" class="mt-4">
+        <div class="container mt-5">
+            <h2 class="mb-4">Detalles del Inmueble</h2>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Referencia</th>
+                  <th>Superficie</th>
+                  <th>Dirección</th>
+                  <th>Tipo</th>
+                  <th>Precio de Venta</th>
+                  <th>Precio de Alquiler</th>
+                  <th>Modo de Oferta</th>
+                  <th>Propietario</th>
+                  <th>Teléfono Propietario</th>
+                  <th>Oficina</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="!inmueble">
+                    <td colspan="10">No se encontraron campos</td>
+                </tr>
+
+                <tr *ngIf="inmueble">
+                  <td>{{inmueble.numeroReferencia}}</td>
+                  <td>{{inmueble.superficie}}</td>
+                  <td>{{inmueble.direccionCompleta}}</td>
+                  <td>{{inmueble.tipo}}</td>
+                  <td>${{inmueble.precioVenta}}</td>
+                  <td>${{inmueble.precioAlquiler}}</td>
+                  <td>{{inmueble.modoOferta}}</td>
+                  <td>{{inmueble.nombrePropietario}}</td>
+                  <td>{{inmueble.telefonoPropietario}}</td>
+                  <td>{{inmueble.oficinaNombre}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
