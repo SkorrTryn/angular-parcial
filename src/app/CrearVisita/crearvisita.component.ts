@@ -25,7 +25,6 @@ constructor(private inmuebleService: InmuebleService, private router:Router, pri
 }
 
 create(): void {
-  console.log(this.visita);
   
   this.inmuebleService.createVisita(this.visita, this.inmueble).subscribe({
     next: (visita: Visita) =>{

@@ -8,13 +8,17 @@ import { CabeceraComponent } from './Cabecera/cabecera.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrearvisitaComponent } from './CrearVisita/crearvisita.component';
+import { OfertainmuebleComponent } from './OfertaInmueble/ofertainmueble.component';
+import { CrearinmuebleComponent } from './CrearInmueble/crearinmueble.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReferenciaInmuebleComponent,
     CabeceraComponent,
-    CrearvisitaComponent
+    CrearvisitaComponent,
+    OfertainmuebleComponent,
+    CrearinmuebleComponent
   ],
   imports: [
     BrowserModule,

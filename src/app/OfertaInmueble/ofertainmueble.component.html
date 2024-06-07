@@ -1,0 +1,60 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Filtrar Inmuebles</h2>
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <label for="tipoInmueble">Tipo de Inmueble</label>
+        <select class="form-control" id="tipoInmueble" [(ngModel)]="filtros.tipo">
+          <option value="Casa">Casa</option>
+          <option value="Villa">Villa</option>
+          <option value="Piso">Piso</option>
+          <option value="Local">Local</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="modoOferta">Modo de Oferta</label>
+        <select class="form-control" id="modoOferta" [(ngModel)]="filtros.modoOferta">
+          <option value="En venta">En venta</option>
+          <option value="En alquiler">En alquiler</option>
+        </select>
+      </div>
+
+      <div class="input-group-append mt-4">
+        <button class="btn btn-primary" type="button" (click)="getInmueblesFiltrados()">Buscar</button>
+      </div>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Número de Referencia</th>
+          <th>Superficie</th>
+          <th>Dirección Completa</th>
+          <th>Tipo</th>
+          <th>Precio Venta</th>
+          <th>Precio Alquiler</th>
+          <th>Modo Oferta</th>
+          <th>Nombre Propietario</th>
+          <th>Teléfono Propietario</th>
+          <th>Oficina Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="inmuebles.length == 0">
+            <td colspan="10">No se encontraron campos</td>
+        </tr>
+
+        <tr *ngFor="let inmueble of inmuebles">
+          <td>{{ inmueble.numeroReferencia }}</td>
+          <td>{{ inmueble.superficie }}</td>
+          <td>{{ inmueble.direccionCompleta }}</td>
+          <td>{{ inmueble.tipo }}</td>
+          <td>${{ inmueble.precioVenta }}</td>
+          <td>${{ inmueble.precioAlquiler }}</td>
+          <td>{{ inmueble.modoOferta }}</td>
+          <td>{{ inmueble.nombrePropietario }}</td>
+          <td>{{ inmueble.telefonoPropietario }}</td>
+          <td>{{ inmueble.oficinaNombre }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

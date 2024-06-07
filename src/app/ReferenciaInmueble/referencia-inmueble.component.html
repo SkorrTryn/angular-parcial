@@ -43,5 +43,32 @@
                 </tr>
               </tbody>
             </table>
+
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th colspan="4">Visitas</th>
+                </tr>
+
+                <tr>
+                  <th>Nombre Cliente</th>
+                  <th>Telefono Cliente</th>
+                  <th>Fecha</th>
+                  <th>Comentario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="!inmueble">
+                    <td colspan="4">No se encontraron campos</td>
+                </tr>
+
+                <tr *ngFor="let item of inmueble?.visitas">
+                  <td>{{item.clienteNombre}}</td>
+                  <td>{{item.clienteTelefono}}</td>
+                  <td>{{item.fecha}}</td>
+                  <td>{{item.comentario}}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
     </div>

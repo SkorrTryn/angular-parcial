@@ -1,0 +1,165 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Crear Inmueble</h2>
+    <form (ngSubmit)="onSubmit()" #inmuebleForm="ngForm">
+  
+      <!-- Número de Referencia -->
+      <div class="form-group">
+        <label for="numeroReferencia">Número de Referencia</label>
+        <input type="text" class="form-control" id="numeroReferencia"
+               [(ngModel)]="inmueble.numeroReferencia" name="numeroReferencia">
+      </div>
+  
+      <!-- Superficie -->
+      <div class="form-group">
+        <label for="superficie">Superficie</label>
+        <input type="number" class="form-control" id="superficie"
+               [(ngModel)]="inmueble.superficie" name="superficie">
+      </div>
+  
+      <!-- Dirección Completa -->
+      <div class="form-group">
+        <label for="direccionCompleta">Dirección Completa</label>
+        <input type="text" class="form-control" id="direccionCompleta"
+               [(ngModel)]="inmueble.direccionCompleta" name="direccionCompleta">
+      </div>
+  
+      <!-- Tipo -->
+      <div class="form-group">
+        <label for="tipo">Tipo</label>
+        <select class="form-control" id="tipo"
+                [(ngModel)]="inmueble.tipo" name="tipo">
+          <option value="Casa">Casa</option>
+          <option value="Villa">Villa</option>
+          <option value="Piso">Piso</option>
+          <option value="Local">Local</option>
+        </select>
+      </div>
+  
+      <!-- Precio Venta -->
+      <div class="form-group">
+        <label for="precioVenta">Precio Venta</label>
+        <input type="number" class="form-control" id="precioVenta"
+               [(ngModel)]="inmueble.precioVenta" name="precioVenta">
+      </div>
+  
+      <!-- Precio Alquiler -->
+      <div class="form-group">
+        <label for="precioAlquiler">Precio Alquiler</label>
+        <input type="number" class="form-control" id="precioAlquiler"
+               [(ngModel)]="inmueble.precioAlquiler" name="precioAlquiler">
+      </div>
+  
+      <!-- Modo Oferta -->
+      <div class="form-group">
+        <label for="modoOferta">Modo Oferta</label>
+        <select class="form-control" id="modoOferta"
+                [(ngModel)]="inmueble.modoOferta" name="modoOferta">
+          <option value="En venta">En venta</option>
+          <option value="En alquiler">En alquiler</option>
+        </select>
+      </div>
+  
+      <!-- Nombre Propietario -->
+      <div class="form-group">
+        <label for="nombrePropietario">Nombre Propietario</label>
+        <input type="text" class="form-control" id="nombrePropietario"
+               [(ngModel)]="inmueble.nombrePropietario" name="nombrePropietario">
+      </div>
+  
+      <!-- Teléfono Propietario -->
+      <div class="form-group">
+        <label for="telefonoPropietario">Teléfono Propietario</label>
+        <input type="text" class="form-control" id="telefonoPropietario"
+               [(ngModel)]="inmueble.telefonoPropietario" name="telefonoPropietario">
+      </div>
+  
+      <!-- Oficina Nombre -->
+      <div class="form-group">
+        <label for="oficinaNombre">Oficina Nombre</label>
+        <input type="text" class="form-control" id="oficinaNombre"
+               [(ngModel)]="inmueble.oficinaNombre" name="oficinaNombre">
+      </div>
+  
+      <!-- Zona -->
+      <div class="form-group" *ngIf="inmueble.tipo != 'Villa'">
+        <label for="zona">Zona</label>
+        <input type="text" class="form-control" id="zona"
+               [(ngModel)]="inmueble.zona" name="zona">
+      </div>
+
+       <!-- Urbanizacion -->
+      <div class="form-group" *ngIf="inmueble.tipo == 'Villa'">
+        <label for="urbanizacion">Urbanizacion</label>
+        <input type="text" class="form-control" id="urbanizacion"
+               [(ngModel)]="inmueble.urbanizacion" name="urbanizacion">
+      </div>
+
+       <!-- Tamaño parcela -->
+       <div class="form-group" *ngIf="inmueble.tipo == 'Villa'">
+        <label for="tamanoParcela">Tamaño de la parcela</label>
+        <input type="number" class="form-control" id="tamanoParcela"
+               [(ngModel)]="inmueble.tamanoParcela" name="tamanoParcela">
+      </div>
+  
+      <!-- Habitaciones -->
+      <div class="form-group" *ngIf="inmueble.tipo != 'Local'">
+        <label for="habitaciones">Habitaciones</label>
+        <input type="number" class="form-control" id="habitaciones"
+               [(ngModel)]="inmueble.habitaciones" name="habitaciones">
+      </div>
+  
+      <!-- Baños -->
+      <div class="form-group"  *ngIf="inmueble.tipo != 'Local'">
+        <label for="baños">Baños</label>
+        <input type="number" class="form-control" id="baños"
+               [(ngModel)]="inmueble.banos" name="baños">
+      </div>
+  
+      <!-- Cocinas -->
+      <div class="form-group"  *ngIf="inmueble.tipo != 'Local'">
+        <label for="cocinas">Cocinas</label>
+        <input type="number" class="form-control" id="cocinas"
+               [(ngModel)]="inmueble.cocinas" name="cocinas">
+      </div>
+  
+      <!-- Gas -->
+      <div class="form-group"  *ngIf="inmueble.tipo != 'Local'">
+        <label for="gas">Gas: </label>
+        <input type="checkbox" id="gas" [(ngModel)]="inmueble.gas" name="gas">
+      </div>
+  
+      <!-- Puerta Blindada -->
+      <div class="form-group"  *ngIf="inmueble.tipo != 'Local'">
+        <label for="puertaBlindada">Puerta Blindada: </label>
+        <input type="checkbox" id="puertaBlindada" [(ngModel)]="inmueble.puertaBlindada" name="puertaBlindada">
+      </div>
+  
+      <!-- Parquet -->
+      <div class="form-group"  *ngIf="inmueble.tipo != 'Local'">
+        <label for="parquet">Parquet: </label>
+        <input type="checkbox" id="parquet" [(ngModel)]="inmueble.parquet" name="parquet">
+      </div>
+
+      <!-- Puertas entrada -->
+      <div class="form-group"  *ngIf="inmueble.tipo == 'Local'">
+        <label for="puertasEntrada">Puertas entrada</label>
+        <input type="number" class="form-control" id="puertasEntrada"
+               [(ngModel)]="inmueble.puertasEntrada" name="puertasEntrada">
+      </div>
+
+      <!-- Diafono -->
+      <div class="form-group"  *ngIf="inmueble.tipo == 'Local'">
+        <label for="diafono">Diafono:</label>
+        <input type="checkbox" id="diafono" [(ngModel)]="inmueble.diafono" name="diafono">
+      </div>
+
+      <!-- Acondicionado -->
+      <div class="form-group"  *ngIf="inmueble.tipo == 'Local'">
+        <label for="acondicionado">Acondicionado:</label>
+        <input type="checkbox" id="acondicionado" [(ngModel)]="inmueble.diafono" name="acondicionado">
+      </div>
+  
+      <button type="submit" class="btn btn-primary mt-3 mb-5" [disabled]="!inmuebleForm.form.valid">Crear Inmueble</button>
+    </form>
+  </div>
+  

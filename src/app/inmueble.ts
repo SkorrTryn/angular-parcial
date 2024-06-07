@@ -16,12 +16,12 @@ export interface Inmueble {
     nombrePropietario: string;
     telefonoPropietario: string;
     oficinaNombre: string;
-    visitas: Visita[];
+    visitas?: Visita[];
     zona?: string;
     urbanizacion?: string;
-    tamañoParcela?: number;
+    tamanoParcela?: number;
     habitaciones?: number;
-    baños?: number;
+    banos?: number;
     cocinas?: number;
     gas?: boolean;
     puertaBlindada?: boolean;
