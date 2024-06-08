@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReferenciaInmuebleComponent } from './ReferenciaInmueble/referencia-inmueble.component';
 import { CabeceraComponent } from './Cabecera/cabecera.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrearvisitaComponent } from './CrearVisita/crearvisita.component';
 import { OfertainmuebleComponent } from './OfertaInmueble/ofertainmueble.component';
 import { CrearinmuebleComponent } from './CrearInmueble/crearinmueble.component';
+import { LoginComponent } from './Login/login.component';
+import { AuthInterceptor } from './auth';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { CrearinmuebleComponent } from './CrearInmueble/crearinmueble.component'
     CabeceraComponent,
     CrearvisitaComponent,
     OfertainmuebleComponent,
-    CrearinmuebleComponent
+    CrearinmuebleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,9 @@ import { CrearinmuebleComponent } from './CrearInmueble/crearinmueble.component'
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

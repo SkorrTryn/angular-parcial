@@ -33,7 +33,8 @@
           </li>
         </ul>
         <div class="d-flex" role="search">
-          <button class="btn btn-outline-success">Login</button>
+          <a *ngIf="!isAuthenticated()" class="btn btn-outline-success" href="login">Login</a>
+          <a *ngIf="isAuthenticated()" (click)="logout()" class="btn btn-outline-danger">Salir </a>
         </div>
       </div>
     </div>

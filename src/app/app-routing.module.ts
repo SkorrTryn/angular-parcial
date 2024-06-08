@@ -4,12 +4,14 @@ import { ReferenciaInmuebleComponent } from './ReferenciaInmueble/referencia-inm
 import { CrearvisitaComponent } from './CrearVisita/crearvisita.component';
 import { OfertainmuebleComponent } from './OfertaInmueble/ofertainmueble.component';
 import { CrearinmuebleComponent } from './CrearInmueble/crearinmueble.component';
+import { LoginComponent } from './Login/login.component';
 
 const routes: Routes = [
   {path: 'nuevo', component: CrearinmuebleComponent},
   {path: 'inmueble', component: ReferenciaInmuebleComponent},
   {path: 'visita', component: CrearvisitaComponent},
   {path: 'oferta', component: OfertainmuebleComponent},
+  {path: 'login', component: LoginComponent},
 ];
 
 @NgModule({
