@@ -5,6 +5,7 @@ import { CrearvisitaComponent } from './CrearVisita/crearvisita.component';
 import { OfertainmuebleComponent } from './OfertaInmueble/ofertainmueble.component';
 import { CrearinmuebleComponent } from './CrearInmueble/crearinmueble.component';
 import { LoginComponent } from './Login/login.component';
+import { MainComponent } from './Main/main.component';
 
 const routes: Routes = [
   {path: 'nuevo', component: CrearinmuebleComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'visita', component: CrearvisitaComponent},
   {path: 'oferta', component: OfertainmuebleComponent},
   {path: 'login', component: LoginComponent},
+  {path: '', component: MainComponent},
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { OfertainmuebleComponent } from './OfertaInmueble/ofertainmueble.compone
 import { CrearinmuebleComponent } from './CrearInmueble/crearinmueble.component';
 import { LoginComponent } from './Login/login.component';
 import { AuthInterceptor } from './auth';
+import { MainComponent } from './Main/main.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthInterceptor } from './auth';
     CrearvisitaComponent,
     OfertainmuebleComponent,
     CrearinmuebleComponent,
-    LoginComponent
+    LoginComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
